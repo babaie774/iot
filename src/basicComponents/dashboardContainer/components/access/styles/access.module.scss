@@ -1,6 +1,5 @@
 .accessContainer {
   width: 100%;
-  //   border: 0.0625rem red solid;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -8,6 +7,7 @@
   margin: 0.25rem;
   background-color: #f8f6f8;
   border-radius: 0.5rem;
+  height: 54px;
 }
 
 .accessContainerTitle {

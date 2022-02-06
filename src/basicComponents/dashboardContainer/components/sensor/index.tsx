@@ -15,18 +15,18 @@ function sensor({ title, usage, highNumber, lowNumber, value, unit, icon }: prop
                     <p className={styles.sensorUsage}>{usage}</p>
                 </div>
             </div>
-            <div className={styles.containerPart}>
-                <p>
+            <div className={styles.containerPartCenter}>
+                <p className={styles.containerPartCenterPart} >
                     <span className={styles.sensorValueTitle}>بیشترین</span>
                     <span className={styles.sensorValueRange}>{highNumber}</span>
                 </p>
-                <p>
+                <p className={styles.containerPartCenterPart}>
                     <span className={styles.sensorValueTitle}>کمترین</span>
                     <span className={styles.sensorValueRange}>{lowNumber}</span>
                 </p>
             </div>
-            <div className={styles.containerPart}>
-                <p>
+            <div className={styles.containerPartLeft}>
+                <p className={styles.containerPartLeftPart}>
                     <span className={styles.sensorValue}>{value}</span>
                     <span className={styles.sensorUnit}>{unit}</span>
                 </p>

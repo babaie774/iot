@@ -1,9 +1,10 @@
 .footerHolder {
-  //   display: none;
   display: flex;
   flex-direction: row;
-  //   border-radius: 5% 50% 0px 0px;
-  //   width: 360px;
+  position: fixed;
+  bottom: 0;
+  right: 0px;
+  width: 100%;
   height: 52px;
   box-shadow: 0 -4px 16px 0 rgba(141, 146, 143, 0.12);
   background-color: #fff;
@@ -16,10 +17,12 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding: 9px 10px 8px;
+  border-radius: 9px;
   svg {
     width: 18px;
-    height: 18px;
-    margin: 6px;
+    // height: 18px;
+    // margin: 6px;
   }
   span {
     display: none;

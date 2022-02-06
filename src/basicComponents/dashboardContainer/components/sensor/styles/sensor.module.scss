@@ -7,12 +7,13 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  height: 80px;
 }
 
 .sensorIcon {
   width: 38px;
   height: 38px;
-  margin: 0 0 20px 18px;
+  margin: 0 0 0 10px;
   padding: 4px;
   border-radius: 7px;
   background-color: #ddf4e6;
@@ -26,10 +27,22 @@
   }
 }
 
-.containerPartRight {
+.containerPartCenter,
+.containerPartRight,
+.containerPartleft {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+
+.containerPartRight {
+  flex-direction: row;
+}
+
+.containerPartCenterPart,
+.containerPartLeftPart {
+  margin: 0px;
 }
 
 .sensorTitle {

@@ -2,9 +2,13 @@
   margin: 20px 0px;
 }
 
+.dashboardContainer {
+  padding: 0 0 52px 0;
+  border: 1px red solid;
+}
+
 .ControllerHolder {
   margin: 20px 0px;
-  // border: 1px red solid;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

@@ -71,7 +71,7 @@ function DashboardContainer() {
     }
 
     return (
-        <>
+        <div className={styles.dashboardContainer}>
             <div className={styles.accessHolder}>
                 {
                     Data.accessText.map(({ title, widgetsNumber, connectionNumber, disconnectNumber }, index) => (
@@ -143,8 +143,7 @@ function DashboardContainer() {
                     )
                     )}
             </div>
-        </>
-
+        </div>
     )
 }
 
