@@ -1,0 +1,88 @@
+@import "./helpers/variables";
+
+// Customize Bootstrap in this import!
+@import "./customBootstrap.scss";
+
+html,
+body {
+  padding: 0;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  margin: 0;
+  // overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+.main {
+  background-color: $bg-dark;
+  display: flex;
+  justify-content: stretch;
+
+  .sideMenuStreamModeOverlay {
+    flex: 0 0 auto;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    z-index: 99999;
+    background: rgba(0, 0, 0, 0.64);
+  }
+}
+// .content::-webkit-scrollbar {
+//   display: none;
+// }
+.content {
+  width: calc(100% - 15.5rem);
+  padding: 2rem 2rem 0;
+  min-height: calc(100vh - 80px);
+  // overflow-y: scroll;
+  // -ms-overflow-style: none; /* IE and Edge */
+  // scrollbar-width: none; /* Firefox */
+}
+.expandContent {
+  width: calc(100% - 5.5rem) !important;
+}
+.fullWidth{
+  width: 100% !important;
+}
+.chatRoom {
+  height: calc(100vh - 80px);
+  position: sticky;
+  right: 0;
+  top: 80px;
+  z-index: 99;
+}
+// .vjs_video_3-dimensions.vjs-fluid {
+//   padding-top: 49.25%;
+//   border-radius: 1rem;
+//   overflow: hidden;
+// }
+.vjs-fluid {
+  padding-top: 49.25%;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+@media screen and (max-width: $breakpoint-lg-custom) {
+  .content {
+    width: 100%;
+    padding: 0;
+    min-height: calc(100vh - 56px);
+    padding-bottom: 3.5rem;
+  }
+  .expandContent {
+    width: 100% !important;
+  }
+}
+@media screen and (max-width: $breakpoint-md-custom) {
+  .expandContent {
+    min-height: calc(100vh - 56px);
+  }
+}

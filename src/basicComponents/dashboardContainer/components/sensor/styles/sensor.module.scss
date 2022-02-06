@@ -1,0 +1,81 @@
+.sensorContainer {
+  width: 100%;
+  padding: 9px;
+  border-radius: 14px;
+  border: solid 1.6px #c6edd5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sensorIcon {
+  width: 38px;
+  height: 38px;
+  margin: 0 0 20px 18px;
+  padding: 4px;
+  border-radius: 7px;
+  background-color: #ddf4e6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  svg {
+    path {
+      fill: #2bbe5b;
+    }
+  }
+}
+
+.containerPartRight {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.sensorTitle {
+  // display: none;
+  // width: 85px;
+  height: 22px;
+  margin: 0 0 4px;
+  font-family: IRANSans;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.57;
+  letter-spacing: normal;
+  text-align: right;
+  color: #000;
+}
+
+.sensorUsage,
+.sensorValueTitle,
+.sensorValueRange,
+.sensorSubTitle {
+  // width: 34px;
+  // height: 19px;
+  margin: 0 0 0 15px;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.58;
+  letter-spacing: normal;
+  text-align: right;
+  color: #8d928f;
+}
+
+.sensorValue {
+  font-size: 20px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.55;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000;
+}
+
+.sensorSubTitle {
+  font-size: 10px;
+}

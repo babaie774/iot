@@ -1,0 +1,11 @@
+.accessHolder {
+  margin: 20px 0px;
+}
+
+.ControllerHolder {
+  margin: 20px 0px;
+  // border: 1px red solid;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

@@ -1,0 +1,29 @@
+@import "./helpers/variables";
+@import "./helpers/mixins";
+@import "./helpers/placeholders";
+@import "./helpers/functions";
+
+.toast-container{
+  height: 100vh;
+  width: 100vw;
+  @include pos(fixed,0,0,0,0);
+  z-index:10001;
+}
+.toast {
+  font: {
+    size: 1rem !important;
+    weight: 700 !important;
+  }
+  border: none !important;
+  width: fit-content;
+  @extend %glassBackdropInfo;
+  @extend %persian;
+  color: $text-color;
+  z-index: 10;
+  @include pos(absolute,80%,50%,null,null);
+  transform: translate(-50%,-50%);
+}
+.modal{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}

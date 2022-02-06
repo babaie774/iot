@@ -1,0 +1,54 @@
+.footerHolder {
+  //   display: none;
+  display: flex;
+  flex-direction: row;
+  //   border-radius: 5% 50% 0px 0px;
+  //   width: 360px;
+  height: 52px;
+  box-shadow: 0 -4px 16px 0 rgba(141, 146, 143, 0.12);
+  background-color: #fff;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 24px;
+}
+
+.footerContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  svg {
+    width: 18px;
+    height: 18px;
+    margin: 6px;
+  }
+  span {
+    display: none;
+  }
+}
+
+.footerContainerDashboard {
+  height: 36px;
+  margin: 14px 0 8px 16px;
+  padding: 9px 10px 8px;
+  border-radius: 9px;
+  font-size: 12px;
+  //   font-weight: normal;
+  //   font-stretch: normal;
+  //   font-style: normal;
+  //   line-height: 1.58;
+  //   letter-spacing: normal;
+  //   text-align: left;
+}
+
+.active {
+  color: #2bbe5b;
+  background-color: #e8f8ee;
+  svg {
+    path {
+      fill: #2bbe5b;
+    }
+  }
+  span {
+    display: table;
+  }
+}

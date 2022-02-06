@@ -1,0 +1,180 @@
+@mixin push--auto {
+    margin: {
+      left: auto;
+      right: auto;
+    }
+  }
+  @mixin font-style($size: false, $color: false, $weight: false, $lh: false, $textAlign: false) {
+    @if $size {
+      font-size: $size;
+    }
+    @if $color {
+      color: $color;
+    }
+    @if $weight {
+      font-weight: $weight;
+    }
+    @if $lh {
+      line-height: $lh;
+    }
+    @if $textAlign {
+      text-align: $textAlign;
+    }
+  }
+  @mixin input-placeholder {
+    &.placeholder {
+      @content;
+    }
+    &:-moz-placeholder {
+      @content;
+    }
+    &::-moz-placeholder {
+      @content;
+    }
+    &:-ms-input-placeholder {
+      @content;
+    }
+    &::-webkit-input-placeholder {
+      @content;
+    }
+  }
+  @mixin flex-column {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  @mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  @mixin flex-center-column {
+    @include flex-center;
+    flex-direction: column;
+  }
+  
+  @mixin flex-center-vert {
+    display: flex;
+    align-items: center;
+  }
+  
+  @mixin flex-center-horiz {
+    display: flex;
+    justify-content: center;
+  }
+  @mixin flex-center-column-horiz {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  @mixin flex-center-column-vert {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  @mixin box($width, $height: $width, $bgColor: false, $radius: false) {
+    width: $width;
+    height: $height;
+    @if $radius {
+      border-radius: $radius;
+    }
+    @if $bgColor {
+      background-color: $bgColor;
+    }
+  }
+  @mixin pseudo($width: 100%, $height: 100%, $display: inline-block, $pos: absolute, $content: "") {
+    content: $content;
+    display: $display;
+    position: $pos;
+    @include box($width, $height);
+  }
+  @mixin absolute-center-vert {
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+  }
+
+  /*************** Custom MIXINS *******************/
+  /* Position Mixin */
+@mixin pos(
+  $position: absolute,
+  $top: null,
+  $left: null,
+  $right: null,
+  $bottom: null
+) {
+  position: $position;
+  top: $top;
+  left: $left;
+  right: $right;
+  bottom: $bottom;
+}
+
+/* BOOTSTRAP media query mixin */
+@mixin screen($size, $type: min, $pixels: null) {
+  @if $size == "xs" {
+    @media screen and (#{$type}-width: $breakpoint-xs-custom) {
+      @content;
+    }
+  } @else if $size == "sm" {
+    @media screen and (#{$type}-width: $breakpoint-sm-custom) {
+      @content;
+    }
+  } @else if $size == "md" {
+    @media screen and (#{$type}-width: $breakpoint-md-custom) {
+      @content;
+    }
+  } @else if $size == "lg" {
+    @media screen and (#{$type}-width: $breakpoint-lg-custom) {
+      @content;
+    }
+  } @else if $size == "xl" {
+    @media screen and (#{$type}-width: $breakpoint-xl-custom) {
+      @content;
+    }
+  } @else if $size == "xxl" {
+    @media screen and (#{$type}-width: $breakpoint-xxl-custom) {
+      @content;
+    }
+  } @else if $size == "custom" {
+    @media screen and (#{$type}-width: $pixels) {
+      @content;
+    }
+  } @else {
+    @error "Property #{$size} must be xs,sm,md,lg,xl,xll or custom";
+  }
+}
+
+/* Psuedo element mixin */
+@mixin psuedoElement($display: block, $pos: absolute, $content: "") {
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+
+/* flex box mixin */
+@mixin flex($pos-x, $pos-y, $dir: null) {
+  display: flex;
+  justify-content: $pos-x;
+  align-items: $pos-y;
+  flex-direction: $dir;
+}
+
+/* animation mixin */
+@mixin animation(
+  $name,
+  $duration,
+  $timing-function,
+  $delay: null,
+  $repeats,
+  $direction: null,
+  $fill-mode: null
+) {
+  animation: $name $duration $timing-function $delay $repeats $direction
+    $fill-mode;
+  @keyframes #{$name} {
+    @content;
+  }
+}

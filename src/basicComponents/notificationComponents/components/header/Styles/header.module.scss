@@ -1,0 +1,12 @@
+.headerContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  padding: 24px;
+}
+
+.headerContainerText {
+  font-size: 16px;
+}
