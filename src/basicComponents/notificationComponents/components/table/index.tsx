@@ -19,7 +19,7 @@ function Table() {
                         <th>1399/05/28</th>
                         <th>360 lux</th>
                         <th>Air Date</th>
-                        <th>Lone Gunmen</th>
+                        {/* <th>Lone Gunmen</th> */}
                     </tr>
                 </tbody>
             </table>

@@ -1,10 +1,11 @@
-@import "./helpers/variables";
+@import './helpers/variables';
 
 // Customize Bootstrap in this import!
-@import "./customBootstrap.scss";
+@import './customBootstrap.scss';
 
 html,
 body {
+  background-color: #fdfdfd;
   padding: 0;
   padding-right: 0 !important;
   padding-left: 0 !important;
@@ -50,7 +51,7 @@ a {
 .expandContent {
   width: calc(100% - 5.5rem) !important;
 }
-.fullWidth{
+.fullWidth {
   width: 100% !important;
 }
 .chatRoom {
