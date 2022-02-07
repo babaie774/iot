@@ -21,6 +21,20 @@ function Table() {
                         <th>Air Date</th>
                         {/* <th>Lone Gunmen</th> */}
                     </tr>
+                    <tr className={Styles.TableContainerBodyTr}>
+                        <th>سنسور زون اول</th>
+                        <th>1399/05/28</th>
+                        <th>360 lux</th>
+                        <th>Air Date</th>
+                        {/* <th>Lone Gunmen</th> */}
+                    </tr>
+                    <tr className={Styles.TableContainerBodyTr}>
+                        <th>سنسور زون اول</th>
+                        <th>1399/05/28</th>
+                        <th>360 lux</th>
+                        <th>Air Date</th>
+                        {/* <th>Lone Gunmen</th> */}
+                    </tr>
                 </tbody>
             </table>
         </div>

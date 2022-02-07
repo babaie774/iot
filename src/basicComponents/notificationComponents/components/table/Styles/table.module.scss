@@ -1,13 +1,37 @@
 .TableContainer {
-  width: 100%;
+  width: 86%;
+  margin: auto;
 }
 
 .TableContainerTable {
-  width: 86%;
-  margin: auto;
+  border-collapse: collapse;
+  width: 100%;
+  border: solid 2px #f1f0f5;
+  border-radius: 8px;
+  background-color: #fff;
+  margin: 28px 0 118px;
+  padding: 14px 0;
+  // text-align: center;
 }
 
 .TableContainerHead {
   height: 47px;
   background-color: #ffffff;
+  // background-color: black;
+  padding: 14px 0px;
+}
+
+.TableContainerBodyTr {
+  // background-color: #f8f6f8;
+  padding: 14px 0px;
+  height: 47px;
+  // width: 100%;
+  // margin: 0px;
+  // padding: 0px;
+  &:nth-child(odd) {
+    background-color: #f1f0f5;
+  }
+  &:nth-child(even) {
+    background-color: #ffffff;
+  }
 }

@@ -71,6 +71,11 @@ a {
   border-radius: 1rem;
   overflow: hidden;
 }
+
+// *:focus {
+//   outline: none;
+// }
+
 @media screen and (max-width: $breakpoint-lg-custom) {
   .content {
     width: 100%;
