@@ -7,7 +7,7 @@ function Search() {
         <div>
             <div className={Styles.SearchContainer}>
                 <input className={Styles.SearchContainerInput} type="search" placeholder='جستجوی' />
-                <span className={Styles.SearchContainerIcon}>{icon.search}</span>
+                <span className={Styles.SearchContainerIcon}>{icon.search()}</span>
             </div>
         </div>
     );

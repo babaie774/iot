@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from "./styles/footer.module.scss"
 import { icon } from "utils/icon"
 import { useRouter } from 'next/router'
@@ -30,17 +30,21 @@ function Footer() {
         },
     ]
 
+    const handleClick: any = (name) => (
+        router.push(name)
+    )
+
     return (
         <div className={styles.footerHolder}>
             {
                 manus.map((item, index) => {
                     return (
-                        <div key={index} className={`${styles.footerContainer} ${router.pathname === item.name ? styles.active : ''}`}>
+                        <a onClick={handleClick(item.name)} key={index} className={`${styles.footerContainer} ${router.pathname === item.name ? styles.active : ''}`}>
                             {item.iconContainer}
                             <span>
                                 {item.text}
                             </span>
-                        </div>
+                        </a>
                     )
                 })
             }

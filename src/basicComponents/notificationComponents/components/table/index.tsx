@@ -1,5 +1,6 @@
-import React from 'react';
-import Styles from './Styles/table.module.scss'
+import React from "react";
+import Styles from "./Styles/table.module.scss"
+import { notifications } from "./data"
 
 function Table() {
     return (
@@ -7,34 +8,23 @@ function Table() {
             <table className={Styles.TableContainerTable}>
                 <thead className={Styles.TableContainerHead}>
                     <tr className={Styles.TableContainerHeadTr}>
-                        <th className={Styles.TableContainerTh}>نام</th>
+                        <th className={Styles.TableContainerTrName}>نام</th>
                         <th>تاریخ</th>
                         <th>ساعت</th>
                         <th>مقدار</th>
                     </tr>
                 </thead>
                 <tbody className={Styles.TableContainerBody}>
-                    <tr className={Styles.TableContainerBodyTr}>
-                        <th>سنسور زون اول</th>
-                        <th>1399/05/28</th>
-                        <th>360 lux</th>
-                        <th>Air Date</th>
-                        {/* <th>Lone Gunmen</th> */}
-                    </tr>
-                    <tr className={Styles.TableContainerBodyTr}>
-                        <th>سنسور زون اول</th>
-                        <th>1399/05/28</th>
-                        <th>360 lux</th>
-                        <th>Air Date</th>
-                        {/* <th>Lone Gunmen</th> */}
-                    </tr>
-                    <tr className={Styles.TableContainerBodyTr}>
-                        <th>سنسور زون اول</th>
-                        <th>1399/05/28</th>
-                        <th>360 lux</th>
-                        <th>Air Date</th>
-                        {/* <th>Lone Gunmen</th> */}
-                    </tr>
+                    {
+                        notifications.map((notification, index) => (
+                            <tr key={index} className={Styles.TableContainerBodyTr}>
+                                <th className={Styles.TableContainerTrName}>{notification.name}</th>
+                                <th>{notification.date}</th>
+                                <th>{notification.time}</th>
+                                <th>{notification.value}</th>
+                            </tr>
+                        ))
+                    }
                 </tbody>
             </table>
         </div>

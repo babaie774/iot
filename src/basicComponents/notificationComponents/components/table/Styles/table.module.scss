@@ -1,6 +1,7 @@
 .TableContainer {
-  width: 86%;
+  // width: 86%;
   margin: auto;
+  // font-family: IRANSansFaNum;
 }
 
 .TableContainerTable {
@@ -10,24 +11,30 @@
   border-radius: 8px;
   background-color: #fff;
   margin: 28px 0 118px;
-  padding: 14px 0;
-  // text-align: center;
+  padding: 14px 0px;
 }
 
 .TableContainerHead {
   height: 47px;
   background-color: #ffffff;
-  // background-color: black;
-  padding: 14px 0px;
+  padding: 14px 14px;
+  color: #8d928f;
+}
+
+.TableContainerTrName {
+  padding-right: 10px;
 }
 
 .TableContainerBodyTr {
-  // background-color: #f8f6f8;
   padding: 14px 0px;
   height: 47px;
-  // width: 100%;
-  // margin: 0px;
-  // padding: 0px;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.92;
+  letter-spacing: normal;
+  text-align: right;
   &:nth-child(odd) {
     background-color: #f1f0f5;
   }
