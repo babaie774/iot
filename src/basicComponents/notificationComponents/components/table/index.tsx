@@ -1,8 +1,8 @@
 import React from "react";
 import Styles from "./Styles/table.module.scss"
-import { notifications } from "./data"
 
-function Table() {
+
+function Table({ items }) {
     return (
         <div className={Styles.TableContainer}>
             <table className={Styles.TableContainerTable}>
@@ -16,7 +16,7 @@ function Table() {
                 </thead>
                 <tbody className={Styles.TableContainerBody}>
                     {
-                        notifications.map((notification, index) => (
+                        items.map((notification, index) => (
                             <tr key={index} className={Styles.TableContainerBodyTr}>
                                 <th className={Styles.TableContainerTrName}>{notification.name}</th>
                                 <th>{notification.date}</th>
