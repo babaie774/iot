@@ -2,7 +2,7 @@ import React from 'react';
 import { icon } from 'utils/icon';
 import Styles from './Styles/footer.module.scss'
 
-function Footer({ paginationNumbers, setCurrentPage }) {
+function Footer({ currentPage, paginationNumbers, setCurrentPage }) {
     const pageNumbers = [];
 
     for (let i = 1; i <= paginationNumbers; i++) {
@@ -10,15 +10,15 @@ function Footer({ paginationNumbers, setCurrentPage }) {
     }
 
     const handleClick: any = (e) => {
-        console.log(e.target);
         setCurrentPage(e.target.value);
     }
 
-    console.log(pageNumbers);
+    // console.log(pageNumbers.length)
+    console.log(currentPage)
 
     return (
         <div className={Styles.footerContainer}>
-            <div className={Styles.paginationContainer}>
+            <div className={`${pageNumbers.length == 1 ? Styles.footerContainerHide : Styles.paginationContainer}`}>
                 <span className={Styles.paginationContainerArrowRight}>
                     {icon.dropdownArrow}
                     {'<'}
@@ -26,7 +26,7 @@ function Footer({ paginationNumbers, setCurrentPage }) {
                 <div className={Styles.paginationContainerNumberList}>
                     {
                         pageNumbers.map((item, index) => (
-                            <input value={item} type="button" onClick={(e) => handleClick(e)} key={index} className={`${Styles.paginationContainerNumbers} ${Styles.active}`}></input>
+                            <input value={item} type="button" onClick={(e) => handleClick(e)} key={index} className={`${currentPage == item ? Styles.active : Styles.paginationContainerNumbers}`}></input>
                         ))
                     }
                 </div>

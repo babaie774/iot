@@ -1,7 +1,6 @@
 import React from "react";
 import Styles from "./Styles/table.module.scss"
 
-
 function Table({ items }) {
     return (
         <div className={Styles.TableContainer}>
