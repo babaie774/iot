@@ -14,7 +14,7 @@ function Footer({ currentPage, paginationNumbers, setCurrentPage }) {
     }
 
     // console.log(pageNumbers.length)
-    console.log(currentPage)
+    // console.log(currentPage)
 
     return (
         <div className={Styles.footerContainer}>

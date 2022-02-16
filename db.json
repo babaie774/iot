@@ -2,77 +2,77 @@
   "notification": [
     {
       "id": 1,
-      "name": "[object Object] سنسور زون اول",
+      "key": "سنسور زون اول",
       "date": "1399/05/28",
       "time": "12:30",
       "value": "360 lux"
     },
     {
       "id": 2,
-      "name": "[object Object] سنسور اول",
+      "key": "سنسور اول",
       "date": "1399/05/28",
       "time": "13:00",
       "value": "235 ppm"
     },
     {
       "id": 3,
-      "name": "[object Object] کنترلر اصلی",
+      "key": "کنترلر اصلی",
       "date": "1399/04/23",
       "time": "13:30",
       "value": "خاموش"
     },
     {
       "id": 4,
-      "name": "[object Object] سرمایش زون دوم",
+      "key": "سرمایش زون دوم",
       "date": "1399/04/08",
       "time": "24:00",
       "value": "روشن"
     },
     {
       "id": 5,
-      "name": "[object Object] رطوبت دهم",
+      "key": "رطوبت دهم",
       "date": "1399/04/08",
       "time": "24:00",
       "value": "قطع ارتباط"
     },
     {
       "id": 5,
-      "name": "[object Object] روشنایی راهرو",
+      "key": "روشنایی راهرو",
       "date": "1399/04/08",
       "time": "24:00",
       "value": "روشن"
     },
     {
       "id": 6,
-      "name": "[object Object] گرمایش زون  اول",
+      "key": "گرمایش زون  اول",
       "date": "1399/04/08",
       "time": "24:00",
       "value": "خاموش"
     },
     {
       "id": 7,
-      "name": "[object Object] باد سنج زون سوم",
+      "key": "باد سنج زون سوم",
       "date": "1399/04/08",
       "time": "24:00",
       "value": "40 m/s"
     },
     {
       "id": 8,
-      "name": "[object Object] باد سنج زون سوم",
+      "key": "باد سنج زون سوم",
       "date": "1399/04/08",
       "time": "24:00",
       "value": "40 m/s"
     },
     {
       "id": 9,
-      "name": "[object Object] باد سنج زون سوم",
+      "key": "باد سنج زون سوم",
       "date": "1399/04/08",
       "time": "24:00",
       "value": "40 m/s"
     },
     {
       "id": 10,
-      "name": "[object Object] باد سنج زون سوم",
+      "key": "باد سنج زون سوم",
       "date": "1399/04/08",
       "time": "24:00",
       "value": "40 m/s"

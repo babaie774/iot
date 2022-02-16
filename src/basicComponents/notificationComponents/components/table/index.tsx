@@ -17,7 +17,7 @@ function Table({ items }) {
                     {
                         items.map((notification, index) => (
                             <tr key={index} className={Styles.TableContainerBodyTr}>
-                                <th className={Styles.TableContainerTrName}>{notification.name}</th>
+                                <th className={Styles.TableContainerTrName}>{notification.key}</th>
                                 <th>{notification.date}</th>
                                 <th>{notification.time}</th>
                                 <th>{notification.value}</th>
