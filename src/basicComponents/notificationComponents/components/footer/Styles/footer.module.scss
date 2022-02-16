@@ -3,19 +3,21 @@
 }
 
 .paginationContainer {
+  height: 38px;
   width: fit-content;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-right: auto;
+  margin: 0px auto 38px 0px;
 }
 
 .paginationContainerArrowRight,
 .paginationContainerArrowLeft {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 30px;
-  height: 30px;
+  height: 100%;
   border-radius: 50px;
   background-color: #f8f6f8;
 }
@@ -25,7 +27,7 @@
   justify-content: space-around;
   align-items: center;
   max-width: 100%;
-  height: 30px;
+  height: 100%;
   margin: 0 3px;
   padding: 5px 10px 5px 9px;
   border-radius: 30px;
@@ -33,21 +35,20 @@
 }
 
 .paginationContainerNumbers {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
   background-color: #f8f6f8;
-  margin: 0 10px 0 11px;
-  padding: 2px 7px 1px 6px;
   border: none;
-  background-color: transparent;
   color: #8d928f;
+  // font-family: IRANSansFaNum;
+  margin: 7px 17px 6px 9px;
+  font-size: 11px;
 }
 
 .active {
-  width: 20px;
-  height: 20px;
   border-radius: 50px;
+  padding: 2px 7px 1px 6px;
   border: solid 1px #2bbe5b;
   background-color: rgba(43, 190, 91, 0.24);
 }

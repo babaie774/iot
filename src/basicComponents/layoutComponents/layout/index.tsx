@@ -3,10 +3,10 @@ import Footer from "basicComponents/layoutComponents/footer"
 import Header from "basicComponents/layoutComponents/header"
 import styles from "./styles/layout.module.scss"
 
-function Layout({ children }: any) {
+function Layout({ notificationCount, children }: any) {
     return (
         <div className={styles.layoutContainer}>
-            <Header />
+            <Header notificationCount={notificationCount} />
             {children}
             <Footer />
         </div>

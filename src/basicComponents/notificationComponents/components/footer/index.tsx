@@ -2,6 +2,7 @@ import React from 'react';
 import { icon } from 'utils/icon';
 import Styles from './Styles/footer.module.scss'
 
+
 function Footer({ currentPage, paginationNumbers, setCurrentPage }) {
     const pageNumbers = [];
 
@@ -13,12 +14,21 @@ function Footer({ currentPage, paginationNumbers, setCurrentPage }) {
         setCurrentPage(e.target.value);
     }
 
-    // console.log(pageNumbers.length)
-    // console.log(currentPage)
+    const handlePrevious: any = () => {
+        if (currentPage > 1) {
+            setCurrentPage(currentPage - 1);
+        }
+    }
+
+    const handleNext: any = () => {
+        if (currentPage < paginationNumbers) {
+            setCurrentPage(currentPage + 1);
+        }
+    }
 
     return (
         <div className={Styles.footerContainer}>
-            <div className={`${pageNumbers.length == 1 ? Styles.footerContainerHide : Styles.paginationContainer}`}>
+            <div onClick={handlePrevious} className={`${pageNumbers.length == 1 ? Styles.footerContainerHide : Styles.paginationContainer}`}>
                 <span className={Styles.paginationContainerArrowRight}>
                     {icon.dropdownArrow}
                     {'<'}
@@ -26,11 +36,11 @@ function Footer({ currentPage, paginationNumbers, setCurrentPage }) {
                 <div className={Styles.paginationContainerNumberList}>
                     {
                         pageNumbers.map((item, index) => (
-                            <input value={item} type="button" onClick={(e) => handleClick(e)} key={index} className={`${currentPage == item ? Styles.active : Styles.paginationContainerNumbers}`}></input>
+                            <input value={item} type="button" onClick={(e) => handleClick(e)} key={index} className={`${Styles.paginationContainerNumbers} ${currentPage == item ? Styles.active : ''}`}></input>
                         ))
                     }
                 </div>
-                <span className={Styles.paginationContainerArrowLeft}>
+                <span onClick={handleNext} className={Styles.paginationContainerArrowLeft}>
                     {icon.dropdownArrow}
                     {'>'}
                 </span>

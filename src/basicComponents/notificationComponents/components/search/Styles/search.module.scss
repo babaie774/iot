@@ -12,9 +12,18 @@
 }
 
 .SearchContainerInput {
+  font-family: IRANSans;
   font-size: 16px;
   width: 100%;
   height: 100%;
+  border: none;
+  background-color: #f8f6f8;
+  color: #8d928f;
+}
+
+.SearchContainerIcon {
+  width: 24px;
+  height: 24px;
   background-color: transparent;
   border: none;
   // margin-right: 24px;

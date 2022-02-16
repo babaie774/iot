@@ -19,7 +19,7 @@ function Search({ setValueSearch }) {
         <>
             <div className={Styles.SearchContainer}>
                 <input onKeyDown={e => { handleSubmit(e) }} className={Styles.SearchContainerInput} type="search" placeholder='جستجوی' />
-                <button onClick={() => setValueSearch(inputValue)} value={icon.search()} className={Styles.SearchContainerIcon}></button>
+                <button onClick={() => setValueSearch(inputValue)} className={Styles.SearchContainerIcon}>{icon.search()}</button>
             </div >
         </>
     );

@@ -39,7 +39,7 @@ function Footer() {
             {
                 manus.map((item, index) => {
                     return (
-                        <a onClick={handleClick(item.name)} key={index} className={`${styles.footerContainer} ${router.pathname === item.name ? styles.active : ''}`}>
+                        <a onClick={() => handleClick(item.name)} key={index} className={`${styles.footerContainer} ${router.pathname === item.name ? styles.active : ''}`}>
                             {item.iconContainer}
                             <span>
                                 {item.text}

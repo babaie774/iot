@@ -36,25 +36,41 @@
   align-items: center;
   width: 39px;
   height: 22px;
+  &Text {
+    width: 18px;
+    height: 14px;
+    margin: 0 0 0 4px;
+    font-family: IRANSansFaNum;
+    font-size: 10px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: center;
+  }
+}
+
+.SimCardOn {
+  background-color: #ddf4e6;
+  svg {
+    path {
+      fill: #2bbe5b;
+    }
+  }
+  .headerContainerSimCardText {
+    color: #2bbe5b;
+  }
+}
+
+.SimCardOff {
   background-color: #fee7e7;
   svg {
     path {
       fill: #ff4800;
     }
   }
-}
-
-.headerContainerSimCardText {
-  width: 18px;
-  height: 14px;
-  margin: 0 0 0 4px;
-  font-family: IRANSansFaNum;
-  font-size: 10px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.5;
-  letter-spacing: normal;
-  text-align: center;
-  color: #ff4800;
+  .headerContainerSimCardText {
+    color: #ff4800;
+  }
 }
