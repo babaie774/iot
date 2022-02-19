@@ -3,9 +3,6 @@ import DashboardContainer from "basicComponents/dashboardContainer"
 import Layout from "basicComponents/layoutComponents/layout"
 
 export default function Dashboard({ data }) {
-
-    console.log(data.length);
-
     return (
         <div>
             <Layout notificationCount={data.length}>

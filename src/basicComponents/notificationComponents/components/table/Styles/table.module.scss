@@ -1,8 +1,6 @@
 .TableContainer {
-  // width: 86%;
   margin: auto;
-  height: 100%;
-  // font-family: IRANSansFaNum;
+  height: 423px;
 }
 
 .TableContainerTable {
@@ -23,11 +21,20 @@
 }
 
 .TableContainerTrName {
+  display: flex;
+  align-items: center;
   padding-right: 10px;
 }
 
-.TableContainerBody {
-  // height: 376px;
+.TableContainerTrIcon svg {
+  margin: 4px;
+}
+
+.TableContainerTrIcon svg path {
+  stroke: #2bbe5b !important;
+  width: 14px;
+  height: 13.8px;
+  border: none;
 }
 
 .TableContainerBodyTr {

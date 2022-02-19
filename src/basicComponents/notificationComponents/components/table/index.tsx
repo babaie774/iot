@@ -1,9 +1,11 @@
 import { Console } from "console";
-import React from "react";
+import React, { useEffect } from "react";
 import { icon } from "utils/icon";
 import Styles from "./Styles/table.module.scss"
 
 function Table({ items }) {
+
+
     return (
         <div className={Styles.TableContainer}>
             <table className={Styles.TableContainerTable}>
@@ -19,7 +21,7 @@ function Table({ items }) {
                     {
                         items.map((notification, index) => (
                             <tr key={index} className={Styles.TableContainerBodyTr}>
-                                <th className={Styles.TableContainerTrName}>{`${icon[notification.icon]()} ${notification.key}`}</th>
+                                <th className={Styles.TableContainerTrName}><span className={Styles.TableContainerTrIcon}>{icon[notification.icon]()}</span>{notification.key}</th>
                                 <th>{notification.date}</th>
                                 <th>{notification.time}</th>
                                 <th>{notification.value}</th>
