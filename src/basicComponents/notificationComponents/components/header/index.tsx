@@ -2,7 +2,6 @@ import React from 'react';
 import { icon } from 'utils/icon';
 import Styles from "./Styles/header.module.scss"
 import { useRouter } from 'next/router'
-import Dashboard from 'pages/playgrounds/dashboard';
 
 function Header() {
     const router = useRouter()
