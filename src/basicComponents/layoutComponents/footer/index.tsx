@@ -30,7 +30,7 @@ function Footer() {
         },
     ]
 
-    const handleClick: any = (name) => (
+    const handleClick = (name) => (
         router.push(name)
     )
 

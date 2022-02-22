@@ -7,7 +7,6 @@ import Styles from "./Styles/notificationComponents.module.scss"
 
 
 function Notification({ data }) {
-    // const [active, setActive] = useState(false);
     const [FormData, setFormData] = useState(data);
     const [currentPage, setCurrentPage] = useState(1)
     const [postPerPage] = useState(8);

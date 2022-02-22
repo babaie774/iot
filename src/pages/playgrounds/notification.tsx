@@ -1,6 +1,5 @@
 import NotificationComponents from 'basicComponents/notificationComponents';
 import React from 'react';
-// import { icon } from 'utils/icon';
 
 function Notification({ data }) {
     return (

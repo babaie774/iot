@@ -3,6 +3,15 @@
   height: 423px;
 }
 
+.style {
+  display: block;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+}
+
 .TableContainerTable {
   border-collapse: collapse;
   width: 100%;
@@ -10,41 +19,40 @@
   border-radius: 8px;
   background-color: #fff;
   margin: 28px 0 118px;
-  padding: 14px 0px;
+  // padding: 14px 0px;
 }
 
 .TableContainerHead {
   height: 47px;
   background-color: #ffffff;
-  padding: 14px 14px;
   color: #8d928f;
 }
 
 .TableContainerTrName {
+  height: 47px;
   display: flex;
   align-items: center;
   padding-right: 10px;
 }
 
+.TableContainerTrIcon {
+  display: inline-flex;
+}
+
 .TableContainerTrIcon svg {
   margin: 4px;
+  width: 14px;
+  height: 13.8px;
 }
 
 .TableContainerTrIcon svg path {
   stroke: #2bbe5b !important;
-  width: 14px;
-  height: 13.8px;
   border: none;
 }
 
 .TableContainerBodyTr {
-  padding: 14px 0px;
   height: 47px !important;
   font-size: 12px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  // line-height: 1.92;
   letter-spacing: normal;
   text-align: right;
   &:nth-child(odd) {

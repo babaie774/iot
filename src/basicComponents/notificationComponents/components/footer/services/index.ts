@@ -1,18 +1,14 @@
-export const handleClick: any = ({ setCurrentPage, e }: any) => {
+export const handleClick = (setCurrentPage, e) => {
   setCurrentPage(e.target.value);
 };
 
-export const handlePrevious: any = ({ setCurrentPage, currentPage }) => {
+export const handlePrevious = (setCurrentPage, currentPage) => {
   if (currentPage > 1) {
     setCurrentPage(currentPage - 1);
   }
 };
 
-export const handleNext: any = ({
-  setCurrentPage,
-  currentPage,
-  paginationNumbers,
-}) => {
+export const handleNext = (setCurrentPage, currentPage, paginationNumbers) => {
   if (currentPage < paginationNumbers) {
     setCurrentPage(currentPage + 1);
   }

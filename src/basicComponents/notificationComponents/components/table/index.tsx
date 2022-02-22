@@ -21,7 +21,7 @@ function Table({ items }) {
                     {
                         items.map((notification, index) => (
                             <tr key={index} className={Styles.TableContainerBodyTr}>
-                                <th className={Styles.TableContainerTrName}><span className={Styles.TableContainerTrIcon}>{icon[notification.icon]()}</span>{notification.key}</th>
+                                <th className={Styles.TableContainerTrName}><span className={Styles.TableContainerTrIcon}>{icon[notification.icon]()}</span><span>{notification.key}</span></th>
                                 <th>{notification.date}</th>
                                 <th>{notification.time}</th>
                                 <th>{notification.value}</th>

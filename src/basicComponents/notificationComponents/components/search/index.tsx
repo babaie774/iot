@@ -7,7 +7,7 @@ function Search({ setValueSearch }) {
     const [inputValue, setInputValue] = useState('');
 
 
-    const handleSubmit = (e: any) => {
+    const handleSubmit = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter') {
             setValueSearch(inputValue);
         }
@@ -18,7 +18,7 @@ function Search({ setValueSearch }) {
     return (
         <>
             <div className={Styles.SearchContainer}>
-                <input onKeyDown={e => { handleSubmit(e) }} className={Styles.SearchContainerInput} type="search" placeholder='جستجوی' />
+                <input onKeyDown={e => { handleSubmit(e) }} className={Styles.SearchContainerInput} placeholder='جستوجو' />
                 <button onClick={() => setValueSearch(inputValue)} className={Styles.SearchContainerIcon}>{icon.search()}</button>
             </div >
         </>
