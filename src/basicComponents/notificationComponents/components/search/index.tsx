@@ -6,19 +6,20 @@ function Search({ setValueSearch }) {
 
     const [inputValue, setInputValue] = useState('');
 
-
     const handleSubmit = (e: any) => {
         if (e.key === 'Enter') {
             setValueSearch(inputValue);
         }
-        setInputValue(e.target.value);
     }
 
+    const handleChange = (e: any) => {
+        setInputValue(e.target.value);
+    }
 
     return (
         <>
             <div className={Styles.SearchContainer}>
-                <input onKeyDown={e => { handleSubmit(e) }} className={Styles.SearchContainerInput} placeholder='جستوجو' />
+                <input onChange={(e) => handleChange(e)} onKeyDown={(e) => { handleSubmit(e) }} className={Styles.SearchContainerInput} placeholder='جستوجو' />
                 <button onClick={() => setValueSearch(inputValue)} className={Styles.SearchContainerIcon}>{icon.search()}</button>
             </div >
         </>
