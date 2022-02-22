@@ -5,7 +5,7 @@ import { handleClick, handlePrevious, handleNext } from './services'
 
 
 function Footer({ currentPage, paginationNumbers, setCurrentPage }) {
-    const pageNumbers = [];
+    const pageNumbers:number[] = [];
 
     for (let i = 1; i <= paginationNumbers; i++) {
         pageNumbers.push(i);

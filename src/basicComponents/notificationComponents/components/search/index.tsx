@@ -7,7 +7,7 @@ function Search({ setValueSearch }) {
     const [inputValue, setInputValue] = useState('');
 
 
-    const handleSubmit = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    const handleSubmit = (e: any) => {
         if (e.key === 'Enter') {
             setValueSearch(inputValue);
         }
