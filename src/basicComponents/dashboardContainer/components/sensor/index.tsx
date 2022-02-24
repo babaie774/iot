@@ -3,7 +3,7 @@ import styles from "./styles/sensor.module.scss"
 
 interface propsType { title: string; usage: string; highNumber: string; lowNumber: string; value: string; unit: string; icon: any; }
 
-function sensor({ title, usage, highNumber, lowNumber, value, unit, icon }: propsType) {
+function Sensor({ title, usage, highNumber, lowNumber, value, unit, icon }: propsType) {
     return (
         <div className={styles.sensorContainer}>
             <div className={styles.containerPartRight}>
@@ -36,4 +36,4 @@ function sensor({ title, usage, highNumber, lowNumber, value, unit, icon }: prop
     )
 }
 
-export default sensor
+export default Sensor

@@ -15,11 +15,6 @@ function Notification({ data }) {
     const indexOfFirstPost = indexOfLastPost - postPerPage;
     const paginationNumbers = Math.ceil(FormData.length / postPerPage);
     const slicedData = FormData.slice(indexOfFirstPost, indexOfLastPost);
-        console.log(valueSearch);
-
-
-
-
 
     useEffect(() => {
         if (valueSearch.length > 0) {

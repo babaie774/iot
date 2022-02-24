@@ -1,5 +1,4 @@
-import { Console } from "console";
-import React, { useEffect } from "react";
+import React from "react";
 import { icon } from "utils/icon";
 import Styles from "./Styles/table.module.scss"
 
