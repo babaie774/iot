@@ -8,15 +8,18 @@ import Styles from "./Styles/notificationComponents.module.scss"
 
 function Notification({ data }) {
     const [FormData, setFormData] = useState(data);
-    const [currentPage, setCurrentPage] = useState(1)
-    const [postPerPage] = useState(8);
     const [valueSearch, setValueSearch] = useState('');
+    //control pagination
+    const [postPerPage] = useState(8);
+    const [currentPage, setCurrentPage] = useState(1);
     const indexOfLastPost = currentPage * postPerPage;
     const indexOfFirstPost = indexOfLastPost - postPerPage;
     const paginationNumbers = Math.ceil(FormData.length / postPerPage);
+    //slice data with pagination
     const slicedData = FormData.slice(indexOfFirstPost, indexOfLastPost);
 
     useEffect(() => {
+        setCurrentPage(1);
         if (valueSearch.length > 0) {
             const items = data.filter((item1) => {
                 return item1.key.includes(valueSearch);
