@@ -1,0 +1,116 @@
+@import "assets/styles/helpers/variables.scss";
+@import "assets/styles/helpers/mixins.scss";
+@import "assets/styles/helpers/functions.scss";
+@import "assets/styles/helpers/placeholders.scss";
+
+// .wrapper{
+//   // overflow: hidden;
+//   // height: 62px;
+//   // min-height: calcRem(62px);
+// }
+
+.inputWrapper {
+  width: 100%;
+  background-color: $purple-02;
+  padding: 1rem;
+
+  @include flex(null, flex-end);
+  column-gap: 1rem;
+  position: relative;
+  .inputBox {
+    flex-grow: 1;
+
+    .textAreaWrapper {
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      .textArea {
+        display: block;
+        width: 100%;
+        background-color: transparent;
+        color: $text-color;
+        outline: none;
+        border: none;
+        resize: none;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        line-height: 1.6;
+        max-height: 4.8rem;
+        word-break: break-word;
+        transition: height 0.25s ease;
+        &::-webkit-scrollbar {
+          width: 2px;
+        }
+        &::-webkit-scrollbar-button {
+          display: none;
+        }
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+          background-color: transparent;
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+          background-color: $purple-03;
+          border-radius: 2px;
+        }
+      }
+      .textArea::placeholder {
+        font: {
+          family: $font-persian;
+          size: calcRem(14px);
+          weight: 500;
+        }
+        color: $purple-03;
+      }
+    }
+  }
+  .btnCustom {
+    height: calcRem(30px);
+    @include flex(center, center);
+    outline: none;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    svg {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+}
+
+.pickerWrapper{
+  transform: translateY(110%);
+  transition: transform 0.3s ease, height 0.3s ease;
+  &.pickerShow{
+    transform: translateY(0)
+  }
+}
+
+.persian {
+  @extend %persian;
+}
+
+.english {
+  @extend %english;
+}
+
+@media screen and (max-width: $breakpoint-lg-custom) {
+  .inputWrapper {
+    padding: calcRem(12px);
+    border-radius: calcRem(8px);
+    .stickerBtn {
+      display: none;
+    }
+    .btnCustom {
+      width: 1.5rem;
+      height: calcRem(30px);
+      svg {
+        width: 1.4rem;
+        height: 1.4rem;
+      }
+    }
+  }
+}

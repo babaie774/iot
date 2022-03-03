@@ -1,0 +1,106 @@
+@import "assets/styles/helpers/functions.scss";
+@import "assets/styles/helpers/mixins.scss";
+@import "assets/styles/helpers/placeholders.scss";
+@import "assets/styles/helpers/variables.scss";
+
+@each $num, $color in $chat-colors {
+  .chatColor#{$num} {
+    color: $color;
+    &:hover {
+      color: $color;
+    }
+    svg, path{
+      fill: $color;
+    }
+  }
+}
+
+.userImg {
+  position: relative;
+  align-self: center;
+  @include flex(center, center);
+  flex: 0 0 auto;
+  border-radius: 100%;
+  width: 1rem;
+  height: 1rem;
+  &.online {
+    border: 1px solid $main-color;
+  }
+  overflow: hidden;
+  & > a {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 100%;
+    position: relative;
+    img {
+      border-radius: 100%;
+    }
+  }
+  display: none;
+}
+.cloud {
+  background-color: $bg-dark;
+  width: 100%;
+  border-radius: 0.5rem;
+  padding: calcRem(10px) calcRem(8px);
+  word-break: break-word;
+  .comment,
+  .userName {
+    font: {
+      size: calcRem(14px);
+      weight: 500;
+    }
+    line-height: 1.6;
+    
+  }
+  .comment {
+    display: inline;
+    color: $gray-02;
+    margin-right: calcRem(8px);
+    overflow-x: hidden;
+    word-break: break-word;
+    white-space: pre-line;
+    unicode-bidi: unset;
+  }
+  .userWrapper {
+    display: inline-flex;
+    vertical-align: middle;
+  }
+}
+
+.persian {
+  @extend %persian;
+}
+
+.english {
+  @extend %english;
+}
+
+@media screen and (max-width: $breakpoint-lg-custom) {
+  .userImg {
+    display: flex;
+    margin-left: 0.25rem;
+  }
+  .cloud {
+    background: transparent;
+    border-radius: 0.5rem;
+    padding: 0 0;
+
+    .comment,
+    .userName {
+      font: {
+        size: calcRem(10px);
+        weight: 400;
+      }
+      svg{
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+    .comment {
+      color: $gray-02;
+      line-height: 1.6;
+    }
+  }
+}

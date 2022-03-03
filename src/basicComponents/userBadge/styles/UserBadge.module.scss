@@ -1,0 +1,115 @@
+@import "../../../../assets/styles/helpers/variables";
+
+.user {
+  &Badge {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  &Avatar {
+    width: 24px;
+    height: 24px;
+    border: 1px solid $main-color;
+    box-sizing: border-box;
+    border-radius: 100%;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+
+    &_offlineMode {
+      border: none !important;
+      opacity: 0.5;
+    }
+  }
+  &Info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  &Name {
+    font-family: $font-english;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: $text-color;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 130px;
+    cursor: pointer;
+  }
+}
+.secoundSize {
+  .user {
+    &Avatar {
+      width: 48px;
+      height: 48px;
+    }
+
+    &Name {
+      width: 400px;
+    }
+  }
+}
+.details {
+  font-weight: normal;
+  color: $gray-02;
+  font-size: 10px;
+  &.gameName {
+    font-family: $font-persian;
+    line-height: 12px;
+    cursor: pointer;
+  }
+  &.clipCount {
+    font-family: $font-persian;
+    line-height: 15px;
+  }
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-right: 8px;
+}
+.liveWrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+
+  .liveCount {
+    font-family: $font-persian;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: $text-color;
+  }
+  .liveSimbol {
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    background: $stream-color;
+    margin-left: 0.5rem;
+  }
+}
+.offline {
+  font-family: $font-persian;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: $gray-02;
+}
+@media screen and (max-width: $breakpoint-sm-custom) {
+  .secoundSize {
+    .user {  
+      &Name {
+        width: 200px;
+      }
+    }
+  }
+}

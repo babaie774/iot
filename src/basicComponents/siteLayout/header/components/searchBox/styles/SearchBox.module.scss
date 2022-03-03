@@ -1,0 +1,133 @@
+@import "../../../../../../assets/styles/helpers/mixins";
+@import "../../../../../../assets/styles/helpers/variables";
+.searchBox {
+  @include box(25rem, 40px, #161b27, 5px);
+  display: flex;
+  position: relative;
+  z-index: 9;
+  input {
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    padding-right: 1rem;
+    padding-left: 3.5rem;
+    @include font-style(0.625rem, #ffffff, 500, 8px);
+    &:placeholder {
+      color: #c4c4c4;
+    }
+    &:-moz-placeholder {
+      color: #c4c4c4;
+    }
+    &::-moz-placeholder {
+      color: #c4c4c4;
+    }
+    &:-ms-input-placeholder {
+      color: #c4c4c4;
+    }
+    &::-webkit-input-placeholder {
+      color: #c4c4c4;
+    }
+  }
+}
+.searchIcon {
+  @include box(3.5rem, 100%, #000000, 5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+.search_icon {
+  display: none;
+}
+.backBtn {
+  display: none;
+}
+.close_search {
+  display: none;
+}
+
+@media screen and (max-width: $breakpoint-lg-custom) {
+  .searchBox {
+    // display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    overflow: hidden;
+    padding-left: 0;
+    background: #1d2333;
+    transition: all 0.3s ease;
+
+    &.show {
+      padding-right: 5rem;
+      padding-left: 2.875rem;
+      width: 100%;
+      overflow: visible;
+    }
+    input {
+      padding: 0;
+      font-size: 1rem;
+      &:placeholder {
+        opacity: 0;
+      }
+      &:-moz-placeholder {
+        opacity: 0;
+      }
+      &::-moz-placeholder {
+        opacity: 0;
+      }
+      &:-ms-input-placeholder {
+        opacity: 0;
+      }
+      &::-webkit-input-placeholder {
+        opacity: 0;
+      }
+    }
+    .searchIcon {
+      display: none;
+    }
+    .backBtn {
+      position: absolute;
+      width: 1.5rem;
+      height: 1.5rem;
+      top: 50%;
+      right: 1.5rem;
+      transform: translateY(-50%) rotate(180deg);
+      @include flex-center();
+      cursor: pointer;
+
+      svg {
+        width: 10px;
+        height: 20px;
+      }
+    }
+    .close_search {
+      cursor: pointer;
+      position: absolute;
+      left: 1.625rem;
+      top: 50%;
+      transform: translateY(-50%);
+      @include box(1.25rem, 1.25rem, #c4c4c4, 100%);
+      @include flex-center();
+      svg {
+        width: 0.5rem;
+        height: 0.5rem;
+        path {
+          fill: #1d2333;
+        }
+      }
+    }
+  }
+
+  .search_icon {
+    display: block;
+    margin-left: 2rem;
+    cursor: pointer;
+  }
+}

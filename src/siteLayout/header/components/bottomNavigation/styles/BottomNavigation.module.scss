@@ -1,0 +1,85 @@
+@import "../../../../../../assets/styles/helpers/mixins";
+@import "../../../../../../assets/styles/helpers/variables";
+.bottomNavigation {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3.5rem;
+  background: #1d2333;
+  box-shadow: 0px -4px 8px 1px rgba(0, 0, 0, 0.16);
+  border-radius: 25px 25px 0px 0px;
+  padding: 0 3rem;
+  display: none;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 99;
+}
+.navigationLink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+  // width: 3.75rem;
+  flex-shrink: 0;
+  &.active {
+    &::before {
+      opacity: 1;
+    }
+  }
+  &__icon {
+    svg {
+      path {
+        fill: #c4c4c4;
+      }
+    }
+  }
+  &.active & {
+    &__title {
+      color: #00f0ff;
+    }
+    &__icon {
+      svg {
+        path {
+          fill: #00f0ff;
+        }
+      }
+    }
+  }
+  &::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 4px;
+    background: #00f0ff;
+    border-radius: 0px 0px 5px 5px;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+  &__title {
+    @include font-style(0.5rem, #c4c4c4, 500, 1.5em);
+    margin-top: 2px;
+  }
+}
+.active {
+}
+@media screen and (max-width: $breakpoint-lg-custom) {
+  /*  .navigationLink {
+    &:nth-child(2) {
+      margin: 0 11.25rem;
+    }
+  } */
+  .bottomNavigation {
+    display: flex;
+  }
+}
+@media screen and (max-width: $breakpoint-md-custom) {
+  /*   .navigationLink {
+    &:nth-child(2) {
+      margin: 0 4.375rem;
+    }
+  } */
+}

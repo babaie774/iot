@@ -1,0 +1,117 @@
+@import "../../../../../../../../assets/styles/helpers/mixins";
+@import "../../../../../../../../assets/styles/helpers/variables";
+.dropdownBox {
+  @include box(100%, auto, #1d2333, 8px);
+  box-shadow: -2px 2px 6px 6px rgba(0, 0, 0, 0.16);
+  position: absolute;
+  padding: 1.75rem;
+  left: 0;
+  top: calc(100% + 8px);
+  z-index: 9999;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+.dropdownBox::-webkit-scrollbar {
+  display: none;
+}
+
+.dropdownBox {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.pointer {
+  cursor: pointer;
+}
+.searchItem {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.875rem;
+}
+
+.userImg {
+  @include box(3rem, 3rem, false, 100%);
+  @include flex-center();
+  margin-left: 1rem;
+  .imgParent {
+    position: relative;
+    @include box(2.5rem, 2.5rem, false, 100%);
+  }
+  img {
+    border-radius: 100%;
+  }
+  &.streaming {
+    border: 2px solid #00f0ff;
+  }
+}
+.desc {
+  display: flex;
+  flex-direction: column;
+}
+.userName {
+  font-family: "roboto";
+  @include font-style(0.875rem, #ffffff, 500, 1.1em);
+  margin-bottom: 0.2em;
+}
+.steamName {
+  font-family: "roboto";
+  @include font-style(0.625rem, #c4c4c4, normal, 1.2em);
+}
+.followerCount {
+  display: flex;
+  align-items: center;
+  @include font-style(1rem, #ffffff, 500, 1.5em);
+}
+.circle {
+  @include box(0.5rem, 8px, #ff035e, 100%);
+  margin-left: 0.5em;
+}
+.offerItem {
+  display: flex;
+  align-items: center;
+  &:not(:last-child) {
+    margin-bottom: 1.75rem;
+  }
+}
+.offerIcon {
+  @include box(3rem, auto, false, 100%);
+  margin-left: 1rem;
+  display: flex;
+  justify-content: center;
+}
+.historyIcon {
+  @extend .offerIcon;
+  width: auto;
+}
+.searchText {
+  @include font-style(0.875rem, #ffffff, 500, 1.1em);
+}
+.removeBtn {
+  cursor: pointer;
+  svg {
+    width: 10px;
+    height: 10px;
+    path {
+      fill: #c4c4c4;
+    }
+  }
+}
+.searchLink {
+  @include font-style(1rem, #00f0ff !important, 500, 1.5em);
+  margin-top: 1.875rem;
+}
+@media screen and(max-width:$breakpoint-lg-custom) {
+  .dropdownBox {
+    position: fixed;
+    height: calc(100vh - 56px);
+    max-height: calc(100vh - 56px);
+    overflow: auto;
+    top: 3.5rem;
+    width: 100%;
+    background-color: #161b27;
+    border-radius: 0;
+    box-shadow: none;
+    box-shadow: inset 0px 4px 8px 1px rgba(0, 0, 0, 0.16);
+  }
+}

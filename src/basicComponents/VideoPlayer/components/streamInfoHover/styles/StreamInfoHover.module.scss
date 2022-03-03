@@ -1,0 +1,244 @@
+@import "assets/styles/helpers/functions.scss";
+@import "assets/styles/helpers/mixins.scss";
+@import "assets/styles/helpers/placeholders.scss";
+@import "assets/styles/helpers/variables.scss";
+
+
+.card {
+  padding: 1.5rem ;
+  position: relative;
+  @include flex(null,center);
+  column-gap: 2rem;
+  opacity: 0;
+  direction: rtl !important;
+  transition: opacity 0.3s ease;
+  .desc{
+    flex-grow: 1;
+    @include flex(null,flex-start,column);
+    color: $text-color;
+    .userName{
+      font: {
+        size: calcRem(24px);
+        weight: 500;
+      }
+    }
+    .streamName{
+      margin: 0;
+      padding: calcRem(6px) 0;
+      font: {
+        size: calcRem(14px);
+        weight: 500;
+      }
+      line-height: 1.6;
+    }
+    .gameName {
+      color: $text-color;
+      cursor: pointer;
+      @include flex(null, center);
+      font: {
+        size: calcRem(14px);
+        weight: 400;
+      }
+      svg {
+        margin-left: 0.5rem;
+      }
+    }
+    
+    & > *:hover{
+        color: $text-color;
+    }
+  }
+}
+.card.show {
+  opacity: 1;
+}
+// Profile Image styles
+.userImg {
+  position: relative;
+  @include flex(center, center);
+  flex: 0 0 auto;
+  border-radius: 100%;
+  width: calcRem(80px);
+  height: calcRem(80px);
+  &.streaming {
+    border: calcRem(2px) solid $main-color;
+  }
+  overflow: hidden;
+  & > a {
+    overflow: hidden;
+    border-radius: 100%;
+    position: relative;
+      width: calcRem(77px);
+      height: calcRem(77px);
+    img {
+      border-radius: 100%;
+    }
+  }
+}
+.info {
+  direction: ltr;
+  flex: 0 0 auto;
+  @include flex(null, center);
+  align-self: flex-start;
+  color: $text-color;
+  column-gap: 1rem;
+  font: {
+    size: 1rem;
+    weight: 500;
+  }
+  .viewers {
+    @include flex(null,center);
+    i {
+      margin-left: 0.5rem;
+    }
+    svg {
+      margin-right: 0.3rem;
+    }
+    span {
+      margin-left: 0.2rem;
+    }
+  }
+  .duration{
+    display: none;
+  }
+}
+.streamNameConitaner{
+  @include flex(null,flex-end);
+  .readMore{
+    padding-bottom: calcRem(3px);
+    font: {
+      size: 14px;
+      weight: 500;
+    }
+    color: $main-color;
+    cursor: pointer;
+    &:hover{
+      color: darken($main-color, 10%)
+    }
+  }
+}
+.btnCustom {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  @include flex(center, center);
+  &.shareBtn{
+    display: none;
+  }
+}
+
+.streamDot {
+  display: inline-block;
+  width: calcRem(6px);
+  height: calcRem(6px);
+  background-color: $stream-color;
+  border-radius: 100%;
+}
+
+.persian {
+  @extend %persian;
+}
+
+.english {
+  @extend %english;
+}
+
+@media screen and (max-width: $breakpoint-xl-custom){
+  .card{
+    padding: calcRem(38px) 1.2rem;
+    &.clip{
+      padding-right: 0.5rem;
+    }
+    .userImg{
+      display: none;
+    }
+    .desc{
+      .userName,
+      .streamName,
+      .gameName{
+        display: none;
+      }
+      .shareBtn{
+        display: flex;
+        svg, path{
+          width: 1.8rem;
+          height: 1.8rem;
+        }
+      }
+    }
+    .info{
+      .info{
+        font-size: calcRem(16px);
+        font-weight: 500;
+      }
+      .duration{
+        display: flex;
+      }
+      .offlineViewers{
+        display: none;
+      }
+    }
+  }
+  .readMore{
+    display: none;
+  }
+}
+
+@media screen and (max-width: $breakpoint-lg-custom){
+  .card{
+    padding: 1.2rem;
+    &.clip{
+      padding: 1.2rem;
+    }
+    .desc{
+      .shareBtn{
+        padding: 0;
+        svg, path{
+          width: 1.4rem;
+          height: 1.4rem;
+        }
+      }
+    }
+    .info{
+      font-size: calcRem(16px);
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-md-custom){
+  .card{
+    padding: 1.2rem;
+    .desc{
+      .shareBtn{
+        padding: 0;
+        svg, path{
+          width: 1.4rem;
+          height: 1.4rem;
+        }
+      }
+    }
+    .info{
+      font-size: calcRem(14px);
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-sm-custom){
+  .card{
+    padding: 1rem;
+    &.clip{
+      padding: 1.1rem;
+    }
+    .desc{
+      .shareBtn{
+        svg, path{
+          width: 1rem;
+          height: 1rem;
+        }
+      }
+    }
+    .info{
+      font-size: calcRem(12px);
+    }
+  }
+}

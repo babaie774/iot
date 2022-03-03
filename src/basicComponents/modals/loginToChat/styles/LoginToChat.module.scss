@@ -1,0 +1,90 @@
+@import 'assets/styles/helpers/mixins';
+@import 'assets/styles/helpers/variables.scss';
+@import 'assets/styles/helpers/functions.scss';
+
+.modal {
+  background: rgba(0, 0, 0, 0.64);
+  :global {
+    .modal-dialog {
+      min-height: 100vh;
+      max-width: calcRem(389px);
+      width: calcRem(389px);
+      margin: 0 auto;
+      opacity: 1 !important;
+    }
+
+    .modal-content {
+      border-radius: 1rem;
+      border: none;
+      padding: 0;
+      background: $bg-primary;
+      box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.16);
+    }
+  }
+}
+
+.closeBtn {
+  @include box(1.5rem, 1.5rem, rgba(0, 0, 0, 0.6), 50%);
+  @include flex-center;
+  border: none;
+  &_container {
+    padding: 1rem 1rem 0;
+  }
+}
+.happyFace {
+  @include flex-center;
+  width: 100%;
+  margin: 2rem 0 calcRem(40px);
+}
+.text {
+  @include flex-center;
+  @include font-style(16px, $text-color, 500, 24px, center);
+  padding: 0 calcRem(57px);
+}
+.buttonWrapper {
+  width: 100%;
+  padding: calcRem(48px) calcRem(24px) calcRem(24px);
+  @include flex(null, null, column);
+  gap: 0.5rem;
+}
+.button {
+  @include box(100%, calcRem(48px), $main-color, 8px);
+  @include font-style(calcRem(18px), #1d2333, bold, 8px);
+  padding: calcRem(12px);
+  border: none;
+  @include flex(center, center);
+  text-decoration: none;
+  color: $bg-dark;
+  cursor: pointer;
+  &:hover {
+    color: $bg-dark;
+  }
+  &.outLine {
+    background-color: transparent;
+    border: 2px solid $main-color;
+    color: $text-color;
+  }
+}
+@media screen and (max-width: $breakpoint-md-custom) {
+  .modal {
+    width: 100%;
+    :global {
+      .modal-dialog {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 !important;
+      }
+      .modal-content {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        border-radius: 2rem 2rem 0px 0px;
+      }
+    }
+  }
+  .closeBtn {
+    &_container {
+      padding: 1rem 1.5rem;
+    }
+  }
+}

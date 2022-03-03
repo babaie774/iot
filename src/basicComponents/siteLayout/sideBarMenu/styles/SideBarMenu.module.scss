@@ -1,0 +1,218 @@
+@import "../../../../assets/styles/helpers/variables.scss";
+@import "../../../../assets/styles/helpers/functions.scss";
+
+.sideBarMenu {
+  height: calc(100vh - 80px);
+  width: 15.5rem;
+  background-color: $bg-primary;
+  transition: width 0.2s linear;
+  position: sticky;
+  right: 0;
+  top: 80px;
+}
+.sideBarStreamMode {
+  height: 100vh !important;
+  width: 15.5rem;
+  position: fixed !important;
+  right: 0;
+  top: 0 !important;
+  z-index: 999999;
+  padding-top: calcRem(20px);
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+}
+.hiddenMenu {
+  transform: translateX(120%);
+}
+.subMenus {
+  padding: 2rem 0;
+  height: 186px;
+}
+.subMenuItem {
+  display: flex;
+  align-items: center;
+  color: $gray-02;
+  padding-right: 2rem;
+  white-space: nowrap;
+  cursor: pointer;
+  &:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+  .subMenuIcon {
+    svg {
+      width: 24px;
+      height: 24px;
+      margin-left: 16px;
+      path {
+        fill: $gray-02 !important;
+      }
+    }
+  }
+  .subMenuText {
+    font-family: $font-persian;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.collapsedMenu {
+  width: 5.5rem !important;
+  transition: width 0.2s linear;
+  right: 0;
+  .subMenus {
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .subMenuItem {
+    position: relative;
+    padding-right: 0;
+    justify-content: center;
+    .subMenuText {
+      display: none;
+    }
+    .subMenuIcon {
+      svg {
+        margin-left: 0;
+      }
+    }
+    .activeIndicator {
+      position: absolute;
+      right: 0;
+      margin-left: 0;
+    }
+  }
+}
+
+.activeMenu {
+  padding-right: 0;
+  color: $lightBlue;
+  .subMenuIcon {
+    svg {
+      path {
+        fill: $lightBlue !important;
+      }
+    }
+  }
+  .subMenuText {
+    font-weight: bold;
+  }
+}
+
+.activeIndicator {
+  background: $lightBlue;
+  border-radius: 5px 0px 0px 5px;
+  width: 4px;
+  height: 24px;
+  margin-left: 1.75rem;
+}
+.divider {
+  background-color: $bg-dark;
+  display: block;
+  width: 100%;
+  height: 0.4px;
+}
+
+.users {
+  padding: 32px 32px 16px 16px;
+  height: calc(100% - 186.4px);
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  &.shortenUsers {
+    padding: 0;
+    padding-top: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.users::-webkit-scrollbar {
+  display: none;
+}
+
+.userBadgeContainer {
+  margin-bottom: 16px;
+}
+.loadMoreBtn {
+  background: transparent;
+  border: none;
+  font-family: $font-persian;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 24px;
+  color: $lightBlue;
+  margin-top: 16px;
+}
+.hamburgerMenu {
+  width: 24px;
+  height: 24px;
+  margin-left: 16px;
+  cursor: pointer;
+}
+.logo {
+  cursor: pointer;
+  &Avatar {
+    svg {
+      width: 47px;
+      height: 40px;
+    }
+  }
+  &Typo {
+    margin-right: 8px;
+    svg {
+      width: 96px;
+      height: 17px;
+    }
+  }
+}
+.subWrapper,.sub {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.subWrapper{
+  padding-right: 2rem;
+}
+
+.thickDivider {
+  background-color: $bg-dark;
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin: calcRem(20px) 0 0 0;
+}
+
+@media screen and (max-width: $breakpoint-lg-custom) {
+  .sideBarMenu {
+    display: none;
+  }
+}
+@media screen and (max-width: $breakpoint-md-custom) {
+  .user {
+    margin-right: 24px;
+  }
+  .logo {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &Avatar {
+      svg {
+        width: 40px;
+        height: 40px;
+      }
+    }
+    &Typo {
+      margin-right: 0;
+      display: inline-flex;
+      svg {
+        width: 28px;
+        height: 5px;
+      }
+    }
+  }
+}

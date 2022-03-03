@@ -1,0 +1,232 @@
+@import "../../../../assets/styles/helpers/variables.scss";
+@import "../../../../assets/styles/helpers/mixins";
+
+.header {
+  background-color: $bg-primary;
+  padding: 0 32px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  box-shadow: 0px 4px 8px 1px rgba(0, 0, 0, 0.16);
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+.sub {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu {
+  width: 24px;
+  height: 24px;
+  margin-left: 16px;
+  cursor: pointer;
+}
+.logo {
+  cursor: pointer;
+  &Avatar {
+    svg {
+      width: 47px;
+      height: 40px;
+    }
+  }
+  &Typo {
+    margin-right: 8px;
+    svg {
+      width: 96px;
+      height: 17px;
+    }
+  }
+}
+.relative {
+  position: relative;
+}
+.user {
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 240, 255, 0.2);
+  border-radius: 50%;
+  margin-right: 32px;
+  position: relative;
+  cursor: pointer;
+  border-radius: 100%;
+  overflow: hidden;
+}
+.loginButton {
+  border: 2px solid $lightBlue;
+  box-sizing: border-box;
+  border-radius: 10px;
+  color: $lightBlue;
+  background-color: transparent;
+  width: 115px;
+  height: 40px;
+  font-family: $font-persian;
+  font-weight: 500;
+  font-size: 14px;
+}
+.searchBox {
+  @include box(25rem, 40px, #161b27, 5px);
+  display: flex;
+  position: relative;
+  z-index: 9;
+  input {
+    border: none;
+    outline: none;
+    width: calc(100% - 56px);
+    height: 100%;
+    background: transparent;
+    padding-right: 1rem;
+    @include font-style(0.625rem, #ffffff, 500, 8px);
+    &:placeholder {
+      color: #c4c4c4;
+    }
+    &:-moz-placeholder {
+      color: #c4c4c4;
+    }
+    &::-moz-placeholder {
+      color: #c4c4c4;
+    }
+    &:-ms-input-placeholder {
+      color: #c4c4c4;
+    }
+    &::-webkit-input-placeholder {
+      color: #c4c4c4;
+    }
+  }
+}
+.searchIcon {
+  @include box(3.5rem, 100%, #000000, 5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.search_icon {
+  display: none;
+}
+.backBtn {
+  display: none;
+}
+.close_search {
+  display: none;
+}
+@media screen and (max-width: $breakpoint-lg-custom) {
+  .headerExistence{
+    display: none;
+  }
+  .header {
+    height: 56px;
+  }
+  .menu {
+    display: none;
+  }
+
+  .searchBox {
+    // display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    overflow: hidden;
+    padding-left: 0;
+    background: #1d2333;
+    transition: all 0.3s ease;
+
+    &.show {
+      padding-right: 5rem;
+      padding-left: 2.875rem;
+      width: 100%;
+      overflow: visible;
+    }
+    input {
+      padding: 0;
+      font-size: 1rem;
+      &:placeholder {
+        opacity: 0;
+      }
+      &:-moz-placeholder {
+        opacity: 0;
+      }
+      &::-moz-placeholder {
+        opacity: 0;
+      }
+      &:-ms-input-placeholder {
+        opacity: 0;
+      }
+      &::-webkit-input-placeholder {
+        opacity: 0;
+      }
+    }
+    .searchIcon {
+      display: none;
+    }
+    .backBtn {
+      position: absolute;
+      width: 1.5rem;
+      height: 1.5rem;
+      top: 50%;
+      right: 1.5rem;
+      transform: translateY(-50%) rotate(180deg);
+      @include flex-center();
+      cursor: pointer;
+
+      svg {
+        width: 10px;
+        height: 20px;
+      }
+    }
+    .close_search {
+      cursor: pointer;
+      position: absolute;
+      left: 1.625rem;
+      top: 50%;
+      transform: translateY(-50%);
+      @include box(1.25rem, 1.25rem, #c4c4c4, 100%);
+      @include flex-center();
+      svg {
+        width: 0.5rem;
+        height: 0.5rem;
+        path {
+          fill: #1d2333;
+        }
+      }
+    }
+  }
+
+  .search_icon {
+    display: block;
+    margin-left: 2rem;
+    cursor: pointer;
+  }
+}
+@media screen and (max-width: $breakpoint-md-custom) {
+  .headerExistenceInMobile{
+    display: none;
+  }
+  .user {
+    margin-right: 24px;
+  }
+  .logo {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &Avatar {
+      svg {
+        width: 40px;
+        height: 40px;
+      }
+    }
+    &Typo {
+      margin-right: 0;
+      display: inline-flex;
+      svg {
+        width: 28px;
+        height: 5px;
+      }
+    }
+  }
+}

@@ -1,0 +1,181 @@
+@import "assets/styles/helpers/functions.scss";
+@import "assets/styles/helpers/mixins.scss";
+@import "assets/styles/helpers/placeholders.scss";
+@import "assets/styles/helpers/variables.scss";
+
+.chatBox {
+  position: relative;
+  flex-shrink: 0;
+  z-index: 0;
+  height: calc(100vh - 80px);
+  width: calcRem(80px);
+  transition: width 0.4s ease;
+  border-top: 2px solid $bg-dark;
+}
+
+.chatBox.open {
+  width: calcRem(316px);
+  .wrapper {
+    opacity: 1;
+  }
+  &.stream {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 0 0 0.5rem 0.5rem;
+    overflow: hidden;
+    .wrapper {
+      width: 100%;
+    }
+  }
+}
+
+.bar {
+  height: 100%;
+  padding: 1rem 1.5rem;
+  background-color: $bg-primary;
+  @include flex(space-between, center, column);
+  .headerIconOpen svg {
+    transform: scale(-1);
+    width: 2rem;
+    height: 2rem;
+  }
+  .notif {
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+    &.newMessage svg path:first-child {
+      fill: $stream-color;
+    }
+  }
+}
+
+.wrapper {
+  @include pos(absolute, 0, unset, 0, 0);
+  height: 100%;
+  opacity: 0;
+  width: calcRem(316px);
+  @include flex(null, null, column);
+  transform: translateX(200%);
+  transition: transform 0.5s ease, opacity 0.6s ease;
+  .header {
+    color: $text-color;
+    background-color: $bg-primary;
+    @include flex(space-between, center);
+    padding: 1rem 2rem 1rem 1rem;
+    border-bottom: 2px solid $bg-dark;
+    .title {
+      font: {
+        size: calcRem(21px);
+        weight: 700;
+      }
+    }
+    .headerIconClose svg {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+  .headerMobile {
+    display: none;
+    color: $text-color;
+    font: {
+      size: calcRem(12px);
+      weight: 400;
+    }
+  }
+  .comments {
+    padding: 1rem 1rem 1rem 1rem;
+    background-color: $bg-primary;
+    flex-grow: 1;
+    overflow: auto;
+    display: flex;
+    flex-direction: column-reverse;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    & > *:first-child {
+      margin-bottom: auto;
+    }
+    &::-webkit-scrollbar {
+      width: 2px;
+    }
+    &::-webkit-scrollbar-button {
+      display: none;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background-color: $purple-03;
+      border-radius: 2px;
+    }
+    & > * {
+      margin: 0.25rem 0;
+    }
+  }
+}
+.wrapper.open {
+  transform: translateX(0);
+}
+.btnCustom {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  svg {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+.persian {
+  @extend %persian;
+}
+
+.english {
+  @extend %english;
+}
+
+@media screen and (max-width: $breakpoint-lg-custom) {
+  .chatBox {
+    @include pos(fixed, null, 0, 0, 0);
+    width: 100vw !important;
+    height: 50vh;
+    z-index: 999;
+    border-top: none;
+    transition: none;
+    &.open.stream {
+      display: none;
+    }
+  }
+  .bar {
+    display: none;
+  }
+  .wrapper {
+    opacity: 1;
+    height: 100%;
+    width: 100%;
+    background-color: $bg-primary;
+    border-radius: 1rem 1rem 0 0;
+    padding: 1rem 1.5rem 1.5rem 1.5rem;
+    transform: translateY(0);
+    .comments {
+      padding: 0;
+      margin: 0.5rem 0 1.5rem 0;
+      &::-webkit-scrollbar {
+        margin: 0;
+        width: 1px;
+      }
+    }
+    .header {
+      display: none;
+    }
+    .headerMobile {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,49 @@
+@import "assets/styles/helpers/variables";
+@import "assets/styles/helpers/placeholders";
+@import "assets/styles/helpers/mixins";
+@import "assets/styles/helpers/functions";
+
+.infoInHover {
+  @include pos(fixed, 0, 0, 0, null);
+  z-index: 1;
+  width: 100%;
+  padding-left: 1rem;
+}
+@media screen and (max-width: $breakpoint-xl-custom) {
+  .infoInHover {
+    right: calcRem(72px);
+    width: calc(100% - calcRem(72px));
+    padding-left: 1rem;
+  }
+}
+@media screen and (max-width: $breakpoint-lg-custom) {
+  .infoInHover {
+    right: 3rem;
+    width: calc(100% - 3rem);
+    padding-left: 0;
+    &.clip {
+      right: 4.5rem;
+      width: calc(100% - 4.5rem);
+    }
+  }
+}
+@media screen and (max-width: $breakpoint-md-custom) {
+  .infoInHover {
+    right: 2.3rem;
+    width: calc(100% - 2.3rem);
+    &.clip {
+      right: 2.3rem;
+      width: calc(100% - 2.3rem);
+    }
+  }
+}
+@media screen and (max-width: $breakpoint-sm-custom) {
+  .infoInHover {
+    right: 2rem;
+    width: calc(100% - 2rem);
+    &.clip {
+      right: 2rem;
+      width: calc(100% - 2rem);
+    }
+  }
+}
