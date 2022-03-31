@@ -2,6 +2,7 @@
   "name": "iot",
   "private": true,
   "scripts": {
+    "server": "json-server --watch db.json --port 5000",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
